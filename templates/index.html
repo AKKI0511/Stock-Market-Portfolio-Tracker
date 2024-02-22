@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
+                <th class="text-end">Buy/Sell</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stock in stocks %}
+            <tr>
+                <td class="text-start">{{ stock.symbol }}</td>
+                <td class="text-end">{{ stock.quantity }}</td>
+                <td class="text-end">${{ stock.price }}</td>
+                <td class="text-end">${{ stock.total_value }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('index') }}">
+                        <input type="hidden" name="symbol_buy/sell" value="{{ stock.symbol }}">
+                        <input placeholder="Quantity" name="buy_sell" type="text" autocomplete="off" autofocus class="form-control mx-auto w-auto">
+                        <button class="btn btn-primary" name="buy" type="submit" style="background-color: green;">Buy</button>
+                        <button class="btn btn-primary" name="sell" type="submit" style="background-color: red;">Sell</button>
+                    </form>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
+                <td class="border-0 text-end">${{ cash }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+                <td class="border-0 w-bold text-end">${{ grand_total }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
