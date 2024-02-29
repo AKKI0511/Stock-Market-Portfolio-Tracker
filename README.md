@@ -33,13 +33,3 @@ A web application to manage and track your stock market portfolio. Buy and sell 
 4. Configure API key: Obtain a Yahoo Finance API key and set it as an environment variable `API_KEY`.
 5. Run the application: `flask run`
 
-## Usage
-1. Navigate to [http://localhost:5000](http://localhost:5000) in your web browser.
-2. Register a new account or log in with existing credentials.
-3. Start managing your stock portfolio!
-
-## Contributing
-Contributions are welcome! Feel free to submit issues and pull requests.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
