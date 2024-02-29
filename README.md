@@ -6,10 +6,6 @@ A web application to manage and track your stock market portfolio. Buy and sell 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - **Portfolio Overview:** View your stock portfolio's current value.
